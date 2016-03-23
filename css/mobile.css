@@ -1,0 +1,66 @@
+#wrapper{
+    width: 100%;
+    padding-left: 70px;
+}
+#left-panel{
+    position: fixed;
+    width: 70px;
+    z-index: 1;
+    overflow: auto;
+}
+#left-panel.expanded{
+    width: 250px;
+}
+span.text{
+    display: none;
+}
+#left-panel.expanded span.text{
+    display: block;
+}
+header, footer{
+    display: none;
+}
+#menu-button{
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: right;
+    text-align: center;
+    line-height: 60px !important;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+}
+nav li{
+    height: 50px;
+    line-height: 50px;
+    padding-left: 0px;
+}
+span.menuicon{
+    width: 70px;
+    height: 50px;
+    line-height: 50px !important;
+    font-size: 25px !important;
+    margin: 0;
+}
+span.text{
+    font-size: 30px;
+}
+
+.project{
+    width: calc(100% - 20px);
+    height: auto;
+}
+.project:hover .links{
+    margin:0;
+}
+.project img{
+    width: 100%;
+    height: auto;
+}
+.project .title{
+    font-size: 30px;
+    height: 50px;
+    line-height: 50px;
+}

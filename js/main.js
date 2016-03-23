@@ -1,25 +1,42 @@
 $(document).ready(function () {
-    $("#left-panel nav li").click(function () {
-        $("#left-panel nav li").removeClass("current")
-        $(this).addClass("current")
+    var is_mobile = false;
+    if (/mobile/i.test(navigator.userAgent)) {
+        is_mobile = true;
+        $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/mobile.css') );
+    }
 
-        var title;
+    $("#left-panel nav li").click(function () {
+        $("#left-panel nav li").removeClass("current");
+        $(this).addClass("current");
+
+        var title = $(this).attr('title');
 
         switch ($(this).attr("id")) {
             case "all":
-                title = "All projects";
-                $(".project").show()
+                $(".project").show();
             break;
             case "games":
-                title = "Games";
-                $(".project").show().not(".game").hide()
+                $(".project").show().not(".game").hide();
             break;
             case "apps":
-                title = "Apps";
-                $(".project").show().not(".application").hide()
+                $(".project").show().not(".application").hide();
+            break;
+            case "plugins":
+                $(".project").show().not(".plugin").hide();
             break;
             default: return false;
         }
+        if($(".project:visible").length == 0){
+            $("#noprojects").show();
+        }else {
+            $("#noprojects").hide();
+        }
+        if(is_mobile)
+            $("#left-panel").removeClass("expanded")
         $("h2").text(title);
+    });
+
+    $("#menu-button").click(function () {
+        $("#left-panel").toggleClass("expanded")
     })
-})
+});
