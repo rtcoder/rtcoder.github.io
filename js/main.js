@@ -24,6 +24,9 @@ $(document).ready(function () {
             case "plugins":
                 $(".project").show().not(".plugin").hide();
             break;
+            case "tools":
+                $(".project").show().not(".tool").hide();
+            break;
             default: return false;
         }
         if($(".project:visible").length == 0){
