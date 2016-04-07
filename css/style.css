@@ -148,7 +148,7 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     line-height: 50px;
     /*float: left;*/
     color: #eee;
@@ -162,6 +162,7 @@ footer a{
     margin: auto 5px;
     border-radius: 100%;
     color: #eee;
+	display: inline-block;
     text-decoration: none;
     font-size: 14px;
     background: #222;
