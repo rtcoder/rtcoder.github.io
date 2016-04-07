@@ -164,6 +164,7 @@ footer a{
     color: #eee;
 	display: inline-block;
     text-decoration: none;
+	cursor: pointer;
     font-size: 14px;
     background: #222;
     transition-duration: 0.2s;
