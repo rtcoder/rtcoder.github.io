@@ -27,6 +27,9 @@ $(document).ready(function () {
             case "tools":
                 $(".project").show().not(".tool").hide();
             break;
+            case "codepen":
+                $(".project").show().not(".codepen").hide();
+            break;
             default: return false;
         }
         if($(".project:visible").length == 0){

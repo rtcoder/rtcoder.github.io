@@ -137,8 +137,7 @@ section{
 	float: left;
 	height: 50px;
 }
-.link, .gh-link{
-    width: 50%;
+.link, .gh-link, .codepen-link{
     height: 50px;
 	float: left;
     background: rgba(22, 22, 22, 1);
@@ -146,6 +145,10 @@ section{
     font-size: 15px !important;
     color: #fff;
 }
+.link, .gh-link{
+    width: 50%;
+}
+.codepen-link{width: 100%}
 footer{
     position: absolute;
     bottom: 0;
@@ -211,7 +214,7 @@ footer a:hover{
 	}
 	footer{
         width: 70px;
-		max-height: calc(100vh - 320px);
+		max-height: calc(100vh - 370px);
         height: 250px;
     }
 	#left-panel.expanded footer{
