@@ -4,6 +4,44 @@ $(document).ready(function () {
         is_mobile = true;
         $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/mobile.css') );
     }
+    vmousemove = false;
+    $(document).on('touchstart', function(e){
+        if(e.originalEvent.touches[0].pageX > $(window).width()/2)
+            $('#left-panel').width(100).removeClass('expanded')
+
+
+
+        if($('#left-panel').hasClass("expanded")){
+            if(e.originalEvent.touches[0].pageX < $(window).width()/2 && e.originalEvent.touches[0].pageX >= $(window).width()/2 - 50){
+                vmousemove = true;
+            }
+        }else{
+            if(e.originalEvent.touches[0].pageX < 100){
+                vmousemove = true;
+            }
+        }
+    }).on('touchend', function(e){
+        vmousemove = false;
+        if($('#left-panel').width() >= ($(window).width()/4)){
+            $('#left-panel').width($(window).width()/2).addClass("expanded");
+        }
+        if ($('#left-panel').width() < ($(window).width()/4)) {
+            $('#left-panel').width(100).removeClass('expanded')
+        }
+    }).on("vmousemove", function (e) {
+        // console.log(e.pageX);
+        if (vmousemove) {
+            e.preventDefault();
+            var w = (e.pageX <= $(window).width()/2) ? e.pageX : $(window).width()/2;
+            if(w<100) w = 100;
+            console.log(w);
+            $('#left-panel').width(w);
+        }
+    })
+
+
+
+
 
     $("#left-panel nav li").click(function () {
         $("#left-panel nav li").removeClass("current");

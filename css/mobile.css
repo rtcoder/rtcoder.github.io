@@ -1,51 +1,40 @@
 #wrapper{
     width: 100%;
-    padding-left: 70px;
+    padding-left: 100px;
 }
 #left-panel{
     position: fixed;
-    width: 70px;
+    min-width: 100px;
+    width: 100px;
     z-index: 1;
-    overflow: auto;
+    overflow: hidden;
 }
 #left-panel.expanded{
-    width: 250px;
+    width: 50%;
+}
+header, footer, #menu-button{
+    display: none;
 }
 span.text{
-    display: none;
-}
-#left-panel.expanded span.text{
     display: block;
-}
-header, footer{
-    display: none;
-}
-#menu-button{
-    display: block;
-    width: 60px;
-    height: 60px;
-    margin: 5px;
-    float: right;
-    text-align: center;
-    line-height: 60px !important;
-    color: #fff;
-    font-size: 2em;
-    cursor: pointer;
 }
 nav li{
-    height: 50px;
-    line-height: 50px;
+    width: 50vw;
+    height: 70px;
+    line-height: 70px;
     padding-left: 0px;
+    overflow: hidden;
 }
 span.menuicon{
-    width: 70px;
-    height: 50px;
-    line-height: 50px !important;
-    font-size: 25px !important;
+    width: 100px;
+    height: 70px;
+    line-height: 70px !important;
+    font-size: 30px !important;
     margin: 0;
 }
 span.text{
-    font-size: 30px;
+    font-size: 35px;
+    width: calc(100% - 100px);
 }
 
 .project{
