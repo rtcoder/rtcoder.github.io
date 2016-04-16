@@ -15,26 +15,28 @@
 header, footer, #menu-button{
     display: none;
 }
-span.text{
-    display: block;
-}
 nav li{
     width: 50vw;
     height: 70px;
     line-height: 70px;
     padding-left: 0px;
     overflow: hidden;
+    position: relative;
 }
 span.menuicon{
+    position: absolute;
     width: 100px;
     height: 70px;
     line-height: 70px !important;
     font-size: 30px !important;
     margin: 0;
+    background: inherit;
+    z-index: 2;
 }
 span.text{
     font-size: 35px;
-    width: calc(100% - 100px);
+    width: calc(50vw - 100px);
+    z-index: 1;
 }
 
 .project{
@@ -52,4 +54,9 @@ span.text{
     font-size: 30px;
     height: 50px;
     line-height: 50px;
+}
+.links, .links *{
+    height: 100px;
+    line-height: 100px !important;
+    font-size: 30px !important;
 }

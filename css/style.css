@@ -52,12 +52,13 @@ li{
     box-sizing: border-box;
     transition-duration: 0.2s;
     padding-left: 10px;
+	background: rgb(44, 44, 44);
 }
 li.current{
-    background: rgba(0,0,0,0.4)
+    background: rgb(26, 26, 26);
 }
 li:hover{
-    background: rgba(0, 0, 0, 0.3);
+    background: rgb(31, 31, 31);
 }
 span{float: left}
 span.menuicon{

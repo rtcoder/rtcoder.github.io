@@ -4,6 +4,14 @@ $(document).ready(function () {
         is_mobile = true;
         $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/mobile.css') );
     }
+
+    if(is_mobile){
+        $("span.text").css({
+            "margin-left" : - ($(window).width()/2 - $('#left-panel').width()) + 100
+        })
+    }
+
+
     vmousemove = false;
     $(document).on('touchstart', function(e){
         if(e.originalEvent.touches[0].pageX > $(window).width()/2)
@@ -36,6 +44,9 @@ $(document).ready(function () {
             if(w<100) w = 100;
             console.log(w);
             $('#left-panel').width(w);
+            $("span.text").css({
+                "margin-left" : - ($(window).width()/2 - $('#left-panel').width()) + 100
+            })
         }
     })
 
