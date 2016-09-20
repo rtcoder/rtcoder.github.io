@@ -81,15 +81,6 @@ section{
     width: 100%;
     float: left;
 }
-#noprojects{
-	width: 100%;
-	float: left;
-	height: auto;
-	line-height: 50px;
-	text-align: center;
-	font-size: 30px;
-	display: none;
-}
 .project{
     height: 230px;
     width: 300px;
@@ -182,11 +173,11 @@ footer a:hover{
 @media all and (max-width: 600px){
     #wrapper{
         width: 100%;
-		padding-left: 70px;
+		padding-left: 50px;
     }
     #left-panel{
 		position: fixed;
-        width: 70px;
+        width: 50px;
 		z-index: 1;
     }
 	#left-panel.expanded{
@@ -203,12 +194,11 @@ footer a:hover{
     }
 	#menu-button{
 		display: block;
-		width: 60px;
-		height: 60px;
-		margin: 5px;
+		width: 50px;
+		height: 50px;
 		float: right;
 		text-align: center;
-	    line-height: 60px !important;
+	    line-height: 50px !important;
 	    color: #fff;
 	    font-size: 2em;
 	    cursor: pointer;
@@ -217,6 +207,7 @@ footer a:hover{
         width: 70px;
 		max-height: calc(100vh - 370px);
         height: 250px;
+        display: none;
     }
 	#left-panel.expanded footer{
         width: 250px;
@@ -228,7 +219,7 @@ footer a:hover{
 		padding-left: 0px;
 	}
 	span.menuicon{
-		width: 70px;
+		width: 50px;
 		height: 50px;
 		line-height: 50px !important;
 		font-size: 25px !important;
