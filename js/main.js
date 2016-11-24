@@ -1,44 +1,27 @@
-$(document).ready(function () {
-    var is_mobile = false;
-    if (/mobile/i.test(navigator.userAgent)) {
-        is_mobile = true;
-    }
+$(document).ready(function(){
+	$('.page-scroll a').bind('click', function(event) {
+        var $anchor = $(this);
 
-    var vmousemove = false;
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 550);
 
-    $("#left-panel nav li").click(function () {
-        $("#left-panel nav li").removeClass("current");
-        $(this).addClass("current");
-
-        var title = $(this).attr('title');
-
-        switch ($(this).attr("id")) {
-            case "all":
-                $(".project").show();
-            break;
-            case "games":
-                $(".project").show().not(".game").hide();
-            break;
-            case "apps":
-                $(".project").show().not(".application").hide();
-            break;
-            case "plugins":
-                $(".project").show().not(".plugin").hide();
-            break;
-            case "tools":
-                $(".project").show().not(".tool").hide();
-            break;
-            case "codepen":
-                $(".project").show().not(".codepen").hide();
-            break;
-            default: return false;
-        }
-        if(is_mobile)
-            $("#left-panel").removeClass("expanded")
-        $("h2").text(title);
+        event.preventDefault();
     });
 
-    $("#menu-button").click(function () {
-        $("#left-panel").toggleClass("expanded")
-    })
+	$(window).scroll(function(e){
+		if($(document).scrollTop() >= 150){
+			$('nav.navbar').addClass('fixed');
+		}else{
+			$('nav.navbar').removeClass('fixed');
+		}
+	});
+
+	$('body').scrollspy({
+        target: '.navbar-default',
+        offset: 51
+    });
+    
+    $('[data-toggle="tooltip"]').tooltip();
+
 });
