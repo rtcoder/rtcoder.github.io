@@ -1,69 +1,13 @@
-/*@import url(https://fonts.googleapis.com/css?family=Open+Sans);*/
-*{
-	-moz-user-select:none;
-	-webkit-user-select:none;
-	-ms-user-select:none;
-	user-select:none;
-	/*cursor:default;*/
-	/*font-family: 'Open Sans', sans-serif*/
+header .text{
+	?
 }
-html, body{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-header{
-	position: relative;
-	min-height: auto;
-	height: 100vh;
-	background: #64b3b3;
-	padding-top: 150px;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
-	background-position: center;
-	background-image: url(../images/computer.jpg);
-	color: #fff;
-}
-header, header .header-content{
-	width: 100%;
-}
-nav.navbar.top-nav{
-	background: transparent;
-	border:none;
-	border-bottom:1px solid rgba(255,255,255,.3);
-	transition: background 0.2s ease-in;
-}
-nav.navbar.top-nav a.navbar-brand{
+nav.navbar.top-nav .navbar-header .navbar-toggle{
 	color: rgba(255,255,255,.5);
-}
-
-nav.navbar.top-nav li a{
-	color: rgba(255,255,255,.7);
-	text-transform: uppercase;
+	border-color: rgba(255,255,255,.5);
+	width: 40px;
+	height: 40px;
 	text-align: center;
-	transition-duration:0.2s;
-}
-nav.navbar.top-nav.fixed a.navbar-brand,
-nav.navbar.top-nav li a:hover,
-nav.navbar.top-nav li.active a{
-	color:#fff;
 	background-color: transparent;
-}
-nav.navbar.top-nav.fixed{
-	background: #2bb381;
-	border:none;
-}
-nav.navbar.top-nav .container{
-	width: 100%;
-}
-section{
-	padding-top: 50px;
-}
-h2{
-	text-transform: uppercase;
 }
 .skill-img{
   	filter: grayscale(100%);
@@ -76,19 +20,23 @@ h2{
 .portfolio-item{
 	padding: 15px;
 	position: relative;
+	margin:auto;
 }
 .portfolio-item .caption{
+	max-width: 400px;
 	width: calc(100% - 30px);
 	height: calc(100% - 30px);
 	position: absolute;
-	top: 15px;
-	left: 15px;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
 	background: rgba(43,179,129,0.8);
 	opacity:0;
 	visibility: hidden;
 	transition-duration: 0.2s;
 }
-.portfolio-item:hover .caption{
+.portfolio-item img:hover + .caption,
+.portfolio-item .caption:hover{
 	opacity: 1;
 	visibility: visible;
 }
@@ -101,4 +49,20 @@ h2{
 }
 .portfolio-item img.portfolio-img{
 	border: 1px solid rgba(0,0,0,0.3);
+	max-width: 400px;
+	width: 100%;
+	margin: auto;
+}
+footer{
+	background: #223d54;;
+	height: 400px;
+	color: #fff;
+}
+@media (max-width: 768px){
+	.navbar .navbar-collapse{
+		background-color: rgba(0,0,0,0.2);
+	}
+	.navbar.fixed .navbar-collapse{
+		background-color: rgba(0,0,0,0);
+	}
 }

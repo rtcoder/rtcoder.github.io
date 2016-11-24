@@ -1,0 +1,96 @@
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans);*/
+*{
+	/*cursor:default;*/
+	/*font-family: 'Open Sans', sans-serif*/
+}
+@firstBgColor: #2bb381;
+html, body {
+    width: 100%;
+    height: 100%;
+ 	/*font-family: 'Open Sans', sans-serif*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+a{
+	color: rgba(255,255,255,.8) !important;
+	text-transform: uppercase;
+	text-align: center;
+	transition-duration:0.2s;
+}
+
+
+header{
+
+	position: relative;
+	min-height: auto;
+	height: 100vh;
+	width: 100%;
+	background: #64b3b3;
+	padding-top: 150px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-image: url(../images/computer.jpg);
+	color: @firstBgColor;
+	.container{
+		width: 100%
+	}
+}
+
+nav.navbar.top-nav{
+	background: @firstBgColor;
+	border:none;
+	border-bottom:1px solid rgba(255,255,255,.3);
+	transition: background 0.2s ease-in;
+	&.fixed{
+		background: #2bb381;
+		border:none;
+		a.navbar-brand{
+			color:#fff !important;
+			background-color: transparent !important;
+		}
+	}
+	.container{
+		width: 100%;
+	}
+	a.navbar-brand{
+		color: rgba(255,255,255,.5);
+	}
+	li{
+		a{
+			color: rgba(255,255,255,.8) !important;
+			text-transform: uppercase;
+			text-align: center;
+			transition-duration:0.2s;
+			&:hover{
+				color:#fff !important;
+				background-color: transparent !important;
+			}
+		}
+		&.active{
+			color:#fff !important;
+			background-color: transparent !important;
+			a{
+				color:#fff !important;
+				background-color: transparent !important;	
+			}
+		}
+	}
+}
+section{
+	padding-top: 50px;
+}
