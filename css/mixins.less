@@ -1,0 +1,35 @@
+
+.transform(@arg){
+	-webkit-transform: @arg;
+		-ms-transform: @arg;
+			transform: @arg;
+}
+
+.appearance(@arg) {
+	-webkit-appearance: @arg;
+	   -moz-appearance: @arg;
+			appearance: @arg;
+}
+
+.filter(@arg) {
+  -webkit-filter: @arg;
+          filter: @arg;
+}
+
+
+.centerHV{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	.transform(translate(-50%, -50%));
+}
+.centerH{
+	position: absolute;
+	left: 50%;
+	.transform(translate(-50%, 0%));
+}
+.centerV{
+	position: absolute;
+	top: 50%;
+	.transform(translate(0%, -50%));
+}
