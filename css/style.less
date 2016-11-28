@@ -6,7 +6,9 @@
 	/*cursor:default;*/
 	/*font-family: 'Open Sans', sans-serif*/
 }
-
+[class*=" devicon-"], [class^=devicon-]{
+	font-size: 50px;
+}
 html, body {
     width: 100%;
     height: 100%;
@@ -105,14 +107,8 @@ nav.navbar.top-nav{
 section{
 	padding-top: 50px;
 }
-
-.skill-img{
-	filter: grayscale(100%);
-	margin: 10px auto;
-	float: none;
-	width: 60px;
-	height: 60px;
-	margin-top:10px;
+.skill-div{
+	margin:10px auto;
 }
 .portfolio-item{
 	padding: 15px;
@@ -160,8 +156,29 @@ footer{
 	background: #223d54;;
 	color: #fff;
 	.footer-above{
-		height: 300px;
-		
+		padding: 20px 0px;
+		a.circle{
+			margin: 0 5px;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			border-radius: 100%;
+			background: #fff;
+			display: inline-block;
+			i{
+				font-size: 25px;
+				color: #223d54;
+				width: inherit;
+				height: inherit;
+				line-height: inherit;
+			}
+			&:hover{
+				background: white;
+				i{
+					color: red;
+				}
+			}
+		}
 	}
 	.footer-below{
 		background: rgba(0, 0, 0, 0.5);
