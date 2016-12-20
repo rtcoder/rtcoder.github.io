@@ -1,10 +1,9 @@
 @import "variables.less";
 @import "mixins.less";
 
-/*@import url(https://fonts.googleapis.com/css?family=Open+Sans);*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 *{
-	/*cursor:default;*/
-	/*font-family: 'Open Sans', sans-serif*/
+	font-family: 'Open Sans', sans-serif;
 }
 [class*=" devicon-"], [class^=devicon-]{
 	font-size: 50px;
@@ -82,7 +81,7 @@ nav.navbar.top-nav{
 				background-color: transparent !important;
 				a{
 					color:#000 !important;
-					background-color: transparent !important;	
+					background-color: transparent !important;
 				}
 			}
 		}
@@ -119,7 +118,7 @@ nav.navbar.top-nav{
 			background-color: transparent !important;
 			a{
 				color:#fff !important;
-				background-color: transparent !important;	
+				background-color: transparent !important;
 			}
 		}
 	}
@@ -160,6 +159,32 @@ section{
 				font-size: 25px;
 				i{
 					color: white;
+				}
+			}
+			.row{
+				margin: 0px;
+				&:first-child{
+					font-size: 19px;
+				}
+				&:nth-child(2){
+					top: 50%;
+					position: absolute;
+					width: 100%;
+					transform: translate(0px, -50%);
+					a{
+						width: 100%;
+						float: left;
+						text-align: center;
+						&+span{
+							width: 100%;
+							float: left;
+							font-size: 16px;
+							cursor:pointer;
+						}
+						&:hover i, &:hover+span{
+							color: #4db7c3;
+						}
+					}
 				}
 			}
 		}
