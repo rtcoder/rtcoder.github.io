@@ -1,5 +1,6 @@
 header .text{
-	?
+    margin: 0 auto;
+    float:none;
 }
 @media (max-width: 768px){
 	.navbar .navbar-collapse{
