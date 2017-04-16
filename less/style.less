@@ -130,73 +130,17 @@ section{
 .skill-div{
     margin:10px auto;
 }
-.portfolio-item{
-    padding: 15px;
-    position: relative;
-    margin:auto;
-    .portfolio-item-content{
-        max-width: 400px;
-        width: 100%;
-        height: 100%;
-        margin: auto;
-        position: relative;
-        .caption{
-            .centerHV;
-            width: 100%;
-            height: 100%;
-            background: lighten(#223d54, 10%);
-            opacity:0;
-            visibility: hidden;
-            transition-duration: 0.2s;
-            &:hover{
-                opacity: 1;
-                visibility: visible;
-            }
-            .caption-content{
-                width: 100%;
-                height: 100%;
-                color: #fff;
-                text-align: center;
-                font-size: 25px;
-                i{
-                    color: white;
-                }
-            }
-            .row{
-                margin: 0px;
-                &:first-child{
-                    font-size: 19px;
-                }
-                &:nth-child(2){
-                    top: 50%;
-                    position: absolute;
-                    width: 100%;
-                    transform: translate(0px, -50%);
-                    a{
-                        width: 100%;
-                        float: left;
-                        text-align: center;
-                        &+span{
-                            width: 100%;
-                            float: left;
-                            font-size: 16px;
-                            cursor:pointer;
-                        }
-                        &:hover i, &:hover+span{
-                            color: #4db7c3;
-                        }
-                    }
-                }
-            }
+
+#portfolio{
+    .projects-list{
+        text-align: center;
+        i{
+            margin: 0 auto;
+            float: none;
         }
-        img.portfolio-img{
-            border: 1px solid rgba(0,0,0,0.3);
-            width: 100%;
-            margin: auto;
-            &:hover + .caption{
-                opacity: 1;
-                visibility: visible;
-            }
+        .project{
+            border: 1px solid #1b1b1b;
+            margin: 0px 0px 10px 0px;
         }
     }
 }
