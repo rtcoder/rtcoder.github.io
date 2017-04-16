@@ -1,12 +1,257 @@
-header .text{
-    margin: 0 auto;
-    float:none;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.centerHV {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-@media (max-width: 768px){
-	.navbar .navbar-collapse{
-		background-color: rgba(0,0,0,0.2);
-	}
-	.navbar.fixed .navbar-collapse{
-		background-color: rgba(0,0,0,0);
-	}
+.centerH {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
+.centerV {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+[class*=" devicon-"],
+[class^=devicon-] {
+  font-size: 50px;
+}
+html,
+body {
+  width: 100%;
+  float: left;
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-transform: uppercase;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+header {
+  position: relative;
+  min-height: auto;
+  height: 100vh;
+  width: 100%;
+  background: #64b3b3;
+  padding-top: 150px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url(../images/computer.jpg);
+  color: #fff;
+}
+header .container {
+  width: 100%;
+}
+nav.navbar.top-nav {
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  transition: background 0.2s ease-in;
+}
+nav.navbar.top-nav.fixed {
+  background: white;
+}
+nav.navbar.top-nav.fixed a.navbar-brand {
+  color: #000 !important;
+  background-color: transparent !important;
+}
+nav.navbar.top-nav.fixed li {
+  border-bottom: 2px solid transparent;
+}
+nav.navbar.top-nav.fixed li a {
+  color: rgba(0, 0, 0, 0.5) !important;
+  text-transform: uppercase;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+nav.navbar.top-nav.fixed li a:hover {
+  color: #000 !important;
+  background-color: transparent !important;
+}
+nav.navbar.top-nav.fixed li.active {
+  color: #000 !important;
+  background-color: transparent !important;
+  border-color: #000 !important;
+}
+nav.navbar.top-nav.fixed li.active a {
+  color: #000 !important;
+  background-color: transparent !important;
+}
+nav.navbar.top-nav .container {
+  width: 100%;
+}
+nav.navbar.top-nav .navbar-header .navbar-toggle {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: transparent;
+}
+nav.navbar.top-nav a.navbar-brand {
+  color: rgba(255, 255, 255, 0.5);
+}
+nav.navbar.top-nav li a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-transform: uppercase;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+nav.navbar.top-nav li a:hover {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+nav.navbar.top-nav li.active {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+nav.navbar.top-nav li.active a {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+section {
+  padding-top: 50px;
+}
+.skill-div {
+  margin: 10px auto;
+}
+.portfolio-item {
+  padding: 15px;
+  position: relative;
+  margin: auto;
+}
+.portfolio-item .portfolio-item-content {
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+}
+.portfolio-item .portfolio-item-content .caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: #315778;
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 0.2s;
+}
+.portfolio-item .portfolio-item-content .caption:hover {
+  opacity: 1;
+  visibility: visible;
+}
+.portfolio-item .portfolio-item-content .caption .caption-content {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 25px;
+}
+.portfolio-item .portfolio-item-content .caption .caption-content i {
+  color: white;
+}
+.portfolio-item .portfolio-item-content .caption .row {
+  margin: 0px;
+}
+.portfolio-item .portfolio-item-content .caption .row:first-child {
+  font-size: 19px;
+}
+.portfolio-item .portfolio-item-content .caption .row:nth-child(2) {
+  top: 50%;
+  position: absolute;
+  width: 100%;
+  transform: translate(0px, -50%);
+}
+.portfolio-item .portfolio-item-content .caption .row:nth-child(2) a {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.portfolio-item .portfolio-item-content .caption .row:nth-child(2) a + span {
+  width: 100%;
+  float: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+.portfolio-item .portfolio-item-content .caption .row:nth-child(2) a:hover i,
+.portfolio-item .portfolio-item-content .caption .row:nth-child(2) a:hover + span {
+  color: #4db7c3;
+}
+.portfolio-item .portfolio-item-content img.portfolio-img {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin: auto;
+}
+.portfolio-item .portfolio-item-content img.portfolio-img:hover + .caption {
+  opacity: 1;
+  visibility: visible;
+}
+footer {
+  background: #223d54;
+  color: #fff;
+}
+footer .footer-above {
+  padding: 20px 0px;
+}
+footer .footer-above a.circle {
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 100%;
+  background: #fff;
+  display: inline-block;
+}
+footer .footer-above a.circle i {
+  font-size: 25px;
+  color: #223d54;
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+}
+footer .footer-above a.circle:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+footer .footer-above a.circle:hover i {
+  color: white;
+}
+footer .footer-below {
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+/*# sourceMappingURL=style.css.map */
