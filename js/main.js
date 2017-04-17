@@ -11,22 +11,24 @@ var langColors = {
     ApacheConf: ''
 };
 var skillsList = [
-    {title: "HTML5", classname: "devicon-html5-plain-wordmark"},
-    {title: "CSS3", classname: "devicon-css3-plain-wordmark"},
+    {title: "HTML5", classname: "devicon-html5-plain"},
+    {title: "CSS3", classname: "devicon-css3-plain"},
     {title: "LESS", classname: "devicon-less-plain-wordmark"},
-    {title: "Bootstrap", classname: "devicon-bootstrap-plain-wordmark"},
+    {title: "Bootstrap", classname: "devicon-bootstrap-plain"},
     {title: "Javascript", classname: "devicon-javascript-plain"},
     {title: "jQuery", classname: "devicon-jquery-plain-wordmark"},
     {title: "PHP", classname: "devicon-php-plain"},
-    {title: "Zend Framework", classname: "devicon-zend-plain-wordmark"},
-    {title: "Laravel", classname: "devicon-laravel-plain-wordmark"},
+    {title: "Zend Framework", classname: "devicon-zend-plain"},
+    {title: "Laravel", classname: "devicon-laravel-plain"},
     {title: "MySQL", classname: "devicon-mysql-plain-wordmark"},
-    {title: "Git", classname: "devicon-git-plain-wordmark"}
+    {title: "Git", classname: "devicon-git-plain"}
 ];
 var getGitHubUser = function () {
     $.get('https://api.github.com/users/' + GitHubUername, function (data) {
         $('#home .image').html('<img class="img-responsive" src="' + data.avatar_url + '">');
         $('#home h1#username').text(data.name);
+        $('#home #bio').html(data.bio);
+        $('#home #location').html('<i class"fa fa-map-marker"></i> '+data.location);
         $('#home #bio').html(data.bio);
 console.log(data)
     });
@@ -52,7 +54,7 @@ var getGitHubUserRepos = function () {
         $('.projects-list').find('i').remove();
         for (var i in data) {
             if (blacklist.indexOf(data[i].name) >= 0) {
-                continue;
+//                continue;
             }
 
             var stars = data[i].stargazers_count > 0 ? '<span class="stars pull-right"><i class="fa fa-star"></i> ' + data[i].stargazers_count + '</span>' : '';
@@ -78,6 +80,6 @@ getGitHubUserRepos();
 getGitHubUser();
 $(document).ready(function () {
     for (var skill in skillsList) {
-        $('#skills .row').append('<div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div"><i class="' + skillsList[skill].classname + ' colored" title="' + skillsList[skill].title + '"></i></div>');
+        $('#skills .row').append('<div class="col-lg-3 col-sm-3 col-xs-4 text-center skill-div"><i class="' + skillsList[skill].classname + ' colored" title="' + skillsList[skill].title + '"></i></div>');
     }
 });
