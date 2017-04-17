@@ -33,7 +33,7 @@ body {
   width: 100%;
   float: left;
   height: 100%;
-  background: #4d4d4d;
+  /*background: #4d4d4d*/
 }
 h1,
 h2,
@@ -43,115 +43,91 @@ h5,
 h6 {
   margin: 0 0 35px;
   text-transform: uppercase;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
 a {
-  color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
   text-align: center;
-  transition-duration: 0.2s;
-}
-header {
-  position: relative;
-  min-height: auto;
-  height: 100vh;
-  width: 100%;
-  background: #64b3b3;
-  padding-top: 150px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-image: url(../images/computer.jpg);
-  color: #fff;
-}
-header .container {
-  width: 100%;
-}
-section {
-  padding-top: 50px;
 }
 .skill-div {
   margin: 10px auto;
 }
-#portfolio .projects-list {
+#projects .projects-list {
+  width: 100%;
   text-align: center;
 }
-#portfolio .projects-list i {
+#projects .projects-list i {
   margin: 0 auto;
   float: none;
 }
-#portfolio .projects-list .project {
+#projects .projects-list .project {
   border-bottom: 1px solid #1b1b1b;
   margin: 0px;
   text-align: left;
   padding: 10px 0px 0px 0px;
 }
-#portfolio .projects-list .project:last-child {
+#projects .projects-list .project:last-child {
   border-bottom: none;
 }
-#portfolio .projects-list .project .name {
+#projects .projects-list .project .name {
   font-size: 20px;
 }
-#portfolio .projects-list .project .name a {
+#projects .projects-list .project .name a {
   color: #09c;
   text-transform: none;
 }
-#portfolio .projects-list .project .description {
+#projects .projects-list .project .description {
   color: #595959;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#portfolio .projects-list .project .stars {
+#projects .projects-list .project .stars {
   font-size: 14px;
   color: #595959;
 }
-#portfolio .projects-list .project .langs {
+#projects .projects-list .project .langs {
   width: 100%;
   height: 10px;
 }
-#portfolio .projects-list .project .langs .lang {
+#projects .projects-list .project .langs .lang {
   height: 10px;
   line-height: 10px;
   color: #000;
   float: left;
 }
-footer {
-  background: #223d54;
-  color: #fff;
+#home .image-container {
+  height: 200px;
+  position: relative;
+  width: 100%;
 }
-footer .footer-above {
-  padding: 20px 0px;
+#home .image-container .image {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background: #ccc;
+  overflow: hidden;
 }
-footer .footer-above a.circle {
+#home a.circle {
   margin: 0 5px;
   width: 50px;
   height: 50px;
   line-height: 50px;
   border-radius: 100%;
-  background: #fff;
+  background: #223d54;
   display: inline-block;
 }
-footer .footer-above a.circle i {
+#home a.circle i {
   font-size: 25px;
-  color: #223d54;
+  color: #fff;
   width: inherit;
   height: inherit;
   line-height: inherit;
 }
-footer .footer-above a.circle:hover {
-  background: rgba(0, 0, 0, 0.5);
+#home a.circle:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
-footer .footer-above a.circle:hover i {
+#home a.circle:hover i {
   color: white;
-}
-footer .footer-below {
-  background: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  height: 50px;
-  line-height: 50px;
 }
 /*# sourceMappingURL=style.css.map */

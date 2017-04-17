@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+<!<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,97 +19,59 @@
 
     </head>
     <body>
-        <section id="portfolio">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2>Projects</h2>
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2   ">
+                <div>
+                    <div class="row tabs">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">About</a></li>
+                            <li role="presentation"><a href="#projects" aria-controls="settings" role="tab" data-toggle="tab">Projects</a></li>
+                            <li role="presentation"><a href="#skills" aria-controls="settings" role="tab" data-toggle="tab">Skills</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="row projects-list">
-                    <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
-                </div>
-            </div>
-        </section>
 
-        <section id="skills">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2>Skills</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-html5-plain-wordmark colored" data-toggle="tooltip" title="HTML5"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-css3-plain-wordmark colored" data-toggle="tooltip" title="CSS3"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-less-plain-wordmark colored" data-toggle="tooltip" title="LESS"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-bootstrap-plain-wordmark colored" data-toggle="tooltip" title="Bootstrap"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-javascript-plain colored" data-toggle="tooltip" title="Javascript"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-jquery-plain-wordmark colored" data-toggle="tooltip" title="jQuery"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-php-plain colored" data-toggle="tooltip" title="PHP"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-zend-plain-wordmark colored" data-toggle="tooltip" title="Zend Framework"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-laravel-plain-wordmark colored" data-toggle="tooltip" title="Laravel"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-mysql-plain-wordmark colored" data-toggle="tooltip" title="MySQL"></i>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div">
-                        <i class="devicon-git-plain-wordmark colored" data-toggle="tooltip" title="Git"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="row content">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active text-center" id="home">
+                                <div class="image-container">
+                                    <div class="image centerH"></div>
+                                </div>
+                                <h1 id="username"></h1>
+                                <p id="bio"></p>
+                                <br>
+                                <div class="row text-center">
+                                    <a href="https://www.facebook.com/rtcoder" class="circle">
+                                        <i class="fa fa-facebook" title="Facebook"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/dawid-je%C5%BC-927285a4" class="circle">
+                                        <i class="fa fa-linkedin" title="LinkedIn"></i>
+                                    </a>
+                                    <a href="https://github.com/rtcoder" class="circle">
+                                        <i class="fa fa-github" title="GitHub"></i>
+                                    </a>
+                                    <a href="mailto:dawidjez@gmail.com" class="circle">
+                                        <i class="fa fa-at" title="e-mail"></i>
+                                    </a>
+                                </div>
+                            </div>
 
-        <footer id="contact">
-            <div class="footer-above">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2>Contact Me</h2>
+                            <div role="tabpanel" class="tab-pane fade pojects" id="projects">
+                                <h1 class="text-center">Projects</h1>
+                                <div class="projects-list">
+                                    <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
+                                </div>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade skills" id="skills">
+                                <h1 class="text-center">Skills</h1>
+                                <div class="row"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row text-center">
-                        <p>dawidjez@gmail.com</p>
-                    </div>
-                    <div class="row text-center">
-                        <a href="https://www.facebook.com/rtcoder" class="circle">
-                            <i class="fa fa-facebook" data-toggle="tooltip" title="Facebook"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/dawid-je%C5%BC-927285a4" class="circle">
-                            <i class="fa fa-linkedin" data-toggle="tooltip" title="LinkedIn"></i>
-                        </a>
-                        <a href="https://github.com/rtcoder" class="circle">
-                            <i class="fa fa-github" data-toggle="tooltip" title="GitHub"></i>
-                        </a>
-                        <a href="mailto:dawidjez@gmail.com" class="circle">
-                            <i class="fa fa-envelope" data-toggle="tooltip" title="e-mail"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
-
-            <div class="footer-below">
-                <div class="container">
-                    Copyright &copy; Dawid Jeż 2017
-                </div>
-            </div>
-        </footer>
+        </div>
     </body>
 </html>

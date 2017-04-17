@@ -12,57 +12,28 @@ html, body {
     width: 100%;
     float: left;
     height: 100%;
-    background: #4d4d4d
+    /*background: #4d4d4d*/
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0 0 35px;
     text-transform: uppercase;
-    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 a{
-    color: rgba(255,255,255,.8);
     text-transform: uppercase;
     text-align: center;
-    transition-duration:0.2s;
 }
 
-header{
-    position: relative;
-    min-height: auto;
-    height: 100vh;
-    width: 100%;
-    background: #64b3b3;
-    padding-top: 150px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    background-position: center;
-    background-image: url(../images/computer.jpg);
-    color: #fff;
-    .container{
-        width: 100%;
-    }
-}
-
-section{
-    padding-top: 50px;
-}
 .skill-div{
     margin:10px auto;
 }
 
-#portfolio{
+#projects{
     .projects-list{
+        width: 100%;
         text-align: center;
         i{
             margin: 0 auto;
@@ -105,40 +76,39 @@ section{
         }
     }
 }
-
-footer{
-    background: #223d54;;
-    color: #fff;
-    .footer-above{
-        padding: 20px 0px;
-        a.circle{
-            margin: 0 5px;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            border-radius: 100%;
-            background: #fff;
-            display: inline-block;
-            i{
-                font-size: 25px;
-                color: #223d54;
-                width: inherit;
-                height: inherit;
-                line-height: inherit;
-            }
-            &:hover{
-                background: rgba(0, 0, 0, 0.5);;
-                i{
-                    color: white;
-                }
-            }
+#home{
+    .image-container{
+        height: 200px;
+        position: relative;
+        width: 100%;
+        .image{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background: #ccc;
+            overflow: hidden;
         }
     }
-    .footer-below{
-        background: rgba(0, 0, 0, 0.5);
-        text-align: center;
+    a.circle{
+        margin: 0 5px;
+        width: 50px;
         height: 50px;
         line-height: 50px;
-
+        border-radius: 100%;
+        background: #223d54;
+        display: inline-block;
+        i{
+            font-size: 25px;
+            color: #fff;
+            width: inherit;
+            height: inherit;
+            line-height: inherit;
+        }
+        &:hover{
+            background: rgba(0, 0, 0, 0.8);;
+            i{
+                color: white;
+            }
+        }
     }
 }

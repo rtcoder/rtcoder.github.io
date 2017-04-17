@@ -8,65 +8,76 @@ var langColors = {
     HTML: '#e34c26',
     Batchfile: '#C1F12E',
     PowerShell: '#012456',
-    ApacheConf: '',
-    
+    ApacheConf: ''
 };
+var skillsList = [
+    {title: "HTML5", classname: "devicon-html5-plain-wordmark"},
+    {title: "CSS3", classname: "devicon-css3-plain-wordmark"},
+    {title: "LESS", classname: "devicon-less-plain-wordmark"},
+    {title: "Bootstrap", classname: "devicon-bootstrap-plain-wordmark"},
+    {title: "Javascript", classname: "devicon-javascript-plain"},
+    {title: "jQuery", classname: "devicon-jquery-plain-wordmark"},
+    {title: "PHP", classname: "devicon-php-plain"},
+    {title: "Zend Framework", classname: "devicon-zend-plain-wordmark"},
+    {title: "Laravel", classname: "devicon-laravel-plain-wordmark"},
+    {title: "MySQL", classname: "devicon-mysql-plain-wordmark"},
+    {title: "Git", classname: "devicon-git-plain-wordmark"}
+];
 var getGitHubUser = function () {
     $.get('https://api.github.com/users/' + GitHubUername, function (data) {
-        return data;
+        $('#home .image').html('<img class="img-responsive" src="' + data.avatar_url + '">');
+        $('#home h1#username').text(data.name);
+        $('#home #bio').html(data.bio);
+console.log(data)
     });
 };
 var getGitHubProjectLanguages = function (name) {
     $.get('https://api.github.com/repos/' + GitHubUername + '/' + name + '/languages', function (langs) {
-//        console.log(langs)
         var sum = 0;
+        if (Object.keys(langs).length === 0) {
+            return false;
+        }
         Object.keys(langs).forEach(function (key) {
             sum += langs[key];
         });
+        $('[data-name="' + name + '"]').append('<div class="langs"></div>');
         Object.keys(langs).forEach(function (key) {
             var percent = ((langs[key] * 100) / sum).toFixed(1);
-            $('[data-name="' + name + '"]').find('.langs').append('<div class="lang" style="background:' + langColors[key] + ';width:' + percent + '%"></div>')
+            $('[data-name="' + name + '"]').find('.langs').append('<div class="lang" style="background:' + langColors[key] + ';width:' + percent + '%"></div>');
         });
     });
 };
-
 var getGitHubUserRepos = function () {
     $.get('https://api.github.com/users/' + GitHubUername + '/repos', function (data) {
-        repos = data;
         $('.projects-list').find('i').remove();
-        for (i in repos) {
-            if (blacklist.indexOf(repos[i].name) >= 0) {
+        for (var i in data) {
+            if (blacklist.indexOf(data[i].name) >= 0) {
                 continue;
             }
 
-
-            var stars = repos[i].stargazers_count > 0 ? '<span class="stars pull-right"><i class="fa fa-star"></i> ' + repos[i].stargazers_count + '</span>' : '';
-
-            var description = repos[i].description ? repos[i].description : '';
-            var repo = '<div class="col-xs-12 project" data-name="' + repos[i].name + '">' +
+            var stars = data[i].stargazers_count > 0 ? '<span class="stars pull-right"><i class="fa fa-star"></i> ' + data[i].stargazers_count + '</span>' : '';
+            var description = data[i].description ? data[i].description : '';
+            var repo = '<div class="col-xs-12 project" data-name="' + data[i].name + '">' +
                     '<div class="row">' +
-                    '<div class="col-sm-6 col-md-12 name">' +
-                    '<a href="' + repos[i].html_url + '">'
-                    + repos[i].name +
+                    '<div class="col-xs-12 name">' +
+                    '<a href="' + data[i].html_url + '">'
+                    + data[i].name +
                     '</a>' + stars +
                     '</div>' +
-                    '<div class="col-sm-6 col-md-12 description">'
+                    '<div class="col-xs-12 description">'
                     + description +
                     '</div>' +
                     '</div>' +
-                    '<div class="langs"></div>'
-            '</div>';
-
-
+                    '</div>';
             $('.projects-list').append(repo);
-            getGitHubProjectLanguages(repos[i].name);
-
+            getGitHubProjectLanguages(data[i].name);
         }
     });
 };
 getGitHubUserRepos();
-
+getGitHubUser();
 $(document).ready(function () {
-
-    $('[data-toggle="tooltip"]').tooltip();
+    for (var skill in skillsList) {
+        $('#skills .row').append('<div class="col-lg-2 col-sm-3 col-xs-4 text-center skill-div"><i class="' + skillsList[skill].classname + ' colored" title="' + skillsList[skill].title + '"></i></div>');
+    }
 });
