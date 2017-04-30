@@ -1,15 +1,6 @@
 var GitHubUername = 'rtcoder';
 var repos = null;
-var blacklist = ['rtcoder.github.io', 'etnel', 'js-os', 'WebWriter', 'phybel_strona', 'game', 'SocialZone'];
-var langColors = {
-    JavaScript: '#f1e05a',
-    CSS: '#563d7c',
-    PHP: '#4F5D95',
-    HTML: '#e34c26',
-    Batchfile: '#C1F12E',
-    PowerShell: '#012456',
-    ApacheConf: ''
-};
+
 var skillsList = [
     {title: "HTML5", classname: "devicon-html5-plain"},
     {title: "CSS3", classname: "devicon-css3-plain"},
@@ -23,56 +14,52 @@ var skillsList = [
     {title: "MySQL", classname: "devicon-mysql-plain-wordmark"},
     {title: "Git", classname: "devicon-git-plain"}
 ];
+var getGitHubGists = function () {
+    $.get('https://api.github.com/users/' + GitHubUername, function (data) {
+        $('#home .image').html('<img class="img-responsive" src="' + data.avatar_url + '">');
+        $('#home h1#username').text(data.name);
+        $('#home #bio').html(data.bio);
+        $('#home #location').html('<i class="fa fa-map-marker"></i> ' + data.location);
+        if (data.hireable) {
+            $('#home #hire').html('<i class="fa fa-check"></i> Avalible to hire');
+        }
+    });
+};
 var getGitHubUser = function () {
     $.get('https://api.github.com/users/' + GitHubUername, function (data) {
         $('#home .image').html('<img class="img-responsive" src="' + data.avatar_url + '">');
         $('#home h1#username').text(data.name);
         $('#home #bio').html(data.bio);
-        $('#home #location').html('<i class"fa fa-map-marker"></i> '+data.location);
-        $('#home #bio').html(data.bio);
-console.log(data)
-    });
-};
-var getGitHubProjectLanguages = function (name) {
-    $.get('https://api.github.com/repos/' + GitHubUername + '/' + name + '/languages', function (langs) {
-        var sum = 0;
-        if (Object.keys(langs).length === 0) {
-            return false;
+        $('#home #location').html('<i class="fa fa-map-marker"></i> ' + data.location);
+        if (data.hireable) {
+            $('#home #hire').html('<i class="fa fa-check"></i> Avalible to hire');
         }
-        Object.keys(langs).forEach(function (key) {
-            sum += langs[key];
-        });
-        $('[data-name="' + name + '"]').append('<div class="langs"></div>');
-        Object.keys(langs).forEach(function (key) {
-            var percent = ((langs[key] * 100) / sum).toFixed(1);
-            $('[data-name="' + name + '"]').find('.langs').append('<div class="lang" style="background:' + langColors[key] + ';width:' + percent + '%"></div>');
-        });
     });
 };
 var getGitHubUserRepos = function () {
     $.get('https://api.github.com/users/' + GitHubUername + '/repos', function (data) {
         $('.projects-list').find('i').remove();
         for (var i in data) {
-            if (blacklist.indexOf(data[i].name) >= 0) {
-//                continue;
-            }
 
-            var stars = data[i].stargazers_count > 0 ? '<span class="stars pull-right"><i class="fa fa-star"></i> ' + data[i].stargazers_count + '</span>' : '';
+            var stars = data[i].stargazers_count > 0 ? '<span class="stars">&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i> ' + data[i].stargazers_count + '</span>' : '';
+            var page = data[i].has_pages ? '<a class="gh-pages-link pull-right" target="_blank" href="https://' + GitHubUername + '.github.io/' + data[i].name + '">demo</a>' : '';
             var description = data[i].description ? data[i].description : '';
+
             var repo = '<div class="col-xs-12 project" data-name="' + data[i].name + '">' +
-                    '<div class="row">' +
-                    '<div class="col-xs-12 name">' +
-                    '<a href="' + data[i].html_url + '">'
-                    + data[i].name +
-                    '</a>' + stars +
-                    '</div>' +
-                    '<div class="col-xs-12 description">'
-                    + description +
-                    '</div>' +
-                    '</div>' +
+                        '<div class="row">' +
+                            '<div class="col-xs-12 name">' +
+                                '<a href="' + data[i].html_url + '">'
+                                    + data[i].name +
+                                '</a>'
+                                + page 
+                                + stars +
+                            '</div>' +
+                            '<div class="col-xs-12 description">'
+                                + description +
+                            '</div>' +
+                        '</div>' +
                     '</div>';
             $('.projects-list').append(repo);
-            getGitHubProjectLanguages(data[i].name);
         }
     });
 };
