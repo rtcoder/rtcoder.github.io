@@ -1,12 +1,140 @@
-header .text{
-    margin: 0 auto;
-    float:none;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.centerHV {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-@media (max-width: 768px){
-	.navbar .navbar-collapse{
-		background-color: rgba(0,0,0,0.2);
-	}
-	.navbar.fixed .navbar-collapse{
-		background-color: rgba(0,0,0,0);
-	}
+.centerH {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
+.centerV {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+[class*=" devicon-"],
+[class^=devicon-] {
+  font-size: 50px;
+}
+html,
+body {
+  width: 100%;
+  float: left;
+  height: 100%;
+  /*background: #4d4d4d*/
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+a {
+  text-transform: uppercase;
+  text-align: center;
+}
+.skill-div {
+  margin: 10px auto;
+}
+#projects .projects-list {
+  width: 100%;
+  text-align: center;
+}
+#projects .projects-list i {
+  margin: 0 auto;
+  float: none;
+}
+#projects .projects-list .project {
+  border-bottom: 1px solid #cecece;
+  margin: 0px;
+  text-align: left;
+  padding: 10px 0px 0px 0px;
+}
+#projects .projects-list .project:last-child {
+  border-bottom: none;
+}
+#projects .projects-list .project .name {
+  font-size: 20px;
+}
+#projects .projects-list .project .name a {
+  color: #09c;
+  text-transform: none;
+}
+#projects .projects-list .project .description {
+  color: #595959;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#projects .projects-list .project .stars,
+#projects .projects-list .project .gh-pages-link {
+  font-size: 14px;
+  color: #595959;
+}
+#projects .projects-list .project .langs {
+  width: 100%;
+  height: 1px;
+}
+#projects .projects-list .project .langs .lang {
+  height: 1px;
+  line-height: 1px;
+  color: #000;
+  float: left;
+}
+#home .image-container {
+  height: 200px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#home .image-container .image {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background: #ccc;
+  overflow: hidden;
+}
+#home a.circle {
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 100%;
+  background: #223d54;
+  display: inline-block;
+  cursor: pointer;
+}
+#home a.circle i {
+  font-size: 25px;
+  color: #fff;
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+}
+#home a.circle:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+#home a.circle:hover i {
+  color: white;
+}
+.row.content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/*# sourceMappingURL=style.css.map */
