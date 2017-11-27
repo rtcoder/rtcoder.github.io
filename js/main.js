@@ -34,7 +34,7 @@ var getGitHubUserRepos = function () {
             var page = data[i].has_pages ? '<a class="gh-pages-link pull-right" target="_blank" href="https://' + GitHubUername + '.github.io/' + data[i].name + '">demo</a>' : '';
             var description = data[i].description ? data[i].description : '';
 
-            var repo = '<div class="col-xs-12 project" data-name="' + data[i].name + '">' +
+            var repo = '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 project" data-name="' + data[i].name + '">' +
                     '<div class="row">' +
                     '<div class="col-xs-12 name">' +
                     '<a href="' + data[i].html_url + '">'

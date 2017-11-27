@@ -62,13 +62,10 @@ a {
   float: none;
 }
 #projects .projects-list .project {
-  border-bottom: 1px solid #cecece;
+  border: 1px solid #cecece;
   margin: 0px;
   text-align: left;
-  padding: 10px 0px 0px 0px;
-}
-#projects .projects-list .project:last-child {
-  border-bottom: none;
+  /*padding: 10px 0px 0px 0px;*/
 }
 #projects .projects-list .project .name {
   font-size: 20px;
