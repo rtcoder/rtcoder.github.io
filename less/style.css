@@ -42,6 +42,16 @@ a {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 400px) {
+  .container .card {
+    width: 100%;
+  }
+}
+@media (max-height: 400px) {
+  .container .card {
+    height: 100%;
+  }
+}
 .container .card .info-container {
   width: 100%;
   height: 80%;
@@ -124,12 +134,28 @@ a {
   box-shadow: 0px 0px 5px 1px #3e3838;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
-.container .repos button.back {
+@media (max-width: 700px) {
+  .container .repos {
+    width: 100%;
+  }
+}
+@media (max-height: 700px) {
+  .container .repos {
+    height: 100%;
+  }
+}
+.container .repos .close-button {
+  display: flex;
+  justify-content: center;
+}
+.container .repos .close-button span.back {
   background: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
   border: none;
   cursor: pointer;
+  height: 20px;
 }
 .container .repos .repos-list {
   display: flex;
@@ -137,6 +163,7 @@ a {
   flex-wrap: nowrap;
   justify-content: flex-start;
   overflow: auto;
+  height: 580px;
 }
 .container .repos .repos-list .column {
   display: flex;
@@ -144,6 +171,16 @@ a {
   flex-wrap: nowrap;
   justify-content: flex-start;
   width: calc(100% / 3);
+}
+@media (max-width: 700px) {
+  .container .repos .repos-list .column {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .container .repos .repos-list .column {
+    width: 100%;
+  }
 }
 .container .repos .repos-list .column .repo {
   height: auto;

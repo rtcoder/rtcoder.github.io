@@ -54,12 +54,14 @@
     </div>
 
     <div class="repos" v-if="view === 'repos'">
-        <button class="back" @click="view = 'card'">&times; Close</button>
+        <div class="close-button">
+        <span class="back" @click="view = 'card'">&times; Close</span>
+        </div>
         <div class="repos-list">
         <div class="column" v-for="column of repos">
             <div class="repo" v-for="repo of column">
                 <div class="name">
-                    <a v-bind:href="repo.html_url" target="_blank">{{repo.name}}</a>
+                    <a v-bind:href="repo.html_url" v-bind:title="repo.name" target="_blank">{{repo.name}}</a>
                     <div class="additional">
                         <a class="gh-pages-link" target="_blank"
                            v-bind:href="'https://' + gitHubUername + '.github.io/' + repo.name" v-if="repo.has_pages">gh-pages</a>
