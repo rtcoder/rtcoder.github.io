@@ -22,13 +22,16 @@ new Vue({
         },
         getGists() {
             this.$http.get(`${this.apiUrl}users/${this.gitHubUername}/gists`)
-                .then(response => console.log(response.data)
+                .then(response => this.gists = response.data
                     , error => console.log(error.statusText));
         },
         getLangsColors() {
             this.$http.get('https://gist.github.com/rtcoder/dec3feab629683d998398c961c1092f5.js')
                 .then(response => this.langColors = response.data
                     , error => console.log(error.statusText));
+        },
+        getFirstFilenameFromGist(gist) {
+            return Object.keys(gist.files)[0];
         }
     },
     mounted(event) {
