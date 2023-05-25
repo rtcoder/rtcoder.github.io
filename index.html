@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,76 +7,173 @@
 
     <title>rtCoder</title>
 
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="less/style.css"/>
-
-    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-<div class="container" id="app">
-    <div class="card" v-if="view === 'card'">
-        <div class="info-container" v-if="userData">
-            <div class="image">
-                <img src="" :src="userData.avatar_url" alt="">
-            </div>
-            <div class="username">{{userData.name}}</div>
-            <div class="bio">{{userData.bio}}</div>
-            <div class="location">{{userData.location}}</div>
-            <div class="hire" v-if="userData.hireable">
-                <i class="fa fa-check"></i> Available to hire
-            </div>
-            <button @click="view='repos'">Show repos</button>
-        </div>
-        <div class="more">
-            <div class="social">
-                <div class="social-box">
-                    <a href="https://linkedin.com/in/dawid-je%C5%BC-927285a4" title="LinkedIn">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                </div>
-                <div class="social-box">
-                    <a href="https://codepen.io/rtCoder/" title="CodePen">
-                        <i class="fa fa-codepen"></i>
-                    </a>
-                </div>
-                <div class="social-box">
-                    <a href="https://github.com/rtcoder" title="GitHub">
-                        <i class="fa fa-github"></i>
-                    </a>
-                </div>
-                <div class="social-box">
-                    <a href="mailto:dawidjez@gmail.com" title="E-mail">
-                        <i class="fa fa-at"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+<header>
+    rtCoder
+    <a href="https://github.com/rtcoder" target="_blank" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+    </a>
+</header>
+<div class="content">
+    <h1>Projects</h1>
+    <div class="tags">
+        <div class="tag active" data-tag-category="all">All</div>
+        <div class="tag" data-tag-category="games">Games</div>
+        <div class="tag" data-tag-category="tools">Tools</div>
+        <div class="tag" data-tag-category="libraries">Libraries</div>
+        <div class="tag" data-tag-category="other">Other</div>
     </div>
-
-    <div class="repos" v-if="view === 'repos'">
-        <div class="close-button">
-        <span class="back" @click="view = 'card'">&times; Close</span>
+    <div class="list">
+        <div class="list-item" data-tag="tools">
+            <img src="img/website-creator.png" alt="Website Creator">
+            <h2>Website Creator</h2>
+            <div class="description">With this tool you can create simple websites without specialist knowledge</div>
+            <a href="https://website-creator.vercel.app/" target="_blank">
+                <button>View Project</button>
+            </a>
         </div>
-        <div class="repos-list">
-        <div class="column" v-for="column of repos">
-            <div class="repo" v-for="repo of column">
-                <div class="name">
-                    <a v-bind:href="repo.html_url" v-bind:title="repo.name" target="_blank">{{repo.name}}</a>
-                    <div class="additional">
-                        <a class="gh-pages-link" target="_blank"
-                           v-bind:href="'https://' + gitHubUername + '.github.io/' + repo.name" v-if="repo.has_pages">gh-pages</a>
-                        <span class="stars" v-if="repo.stargazers_count">&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i> {{repo.stargazers_count}}</span>
-                    </div>
-                </div>
-                <div class="description" v-if="repo.description">{{repo.description}}</div>
-            </div>
-            </div>
+        <div class="list-item" data-tag="tools">
+            <img src="img/webdraft.png" alt="WebDraft">
+            <h2>WebDraft</h2>
+            <div class="description">Online tool for drawing</div>
+            <a href="https://rtcoder.github.io/WebDraft/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="tools">
+            <img src="img/fake-api.png" alt="Fake API">
+            <h2>Fake API</h2>
+            <div class="description">Simple static API for projects</div>
+            <a href="https://rtcoder.github.io/fake-api/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="tools">
+            <img src="img/media-downloader.png" alt="Media downloader">
+            <h2>Media downloader</h2>
+            <div class="description">Download image, audio and video from websites</div>
+            <a href="https://chrome.google.com/webstore/detail/media-downloader/aklijicmhlmfioogfbemefilfdffijcl"
+               target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="games">
+            <img src="img/racing-game.png" alt="Racing">
+            <h2>Racing</h2>
+            <div class="description">Racing game</div>
+            <a href="https://rtcoder.github.io/racing-game/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="games">
+            <img src="img/memory-game.png" alt="Memory">
+            <h2>Memory</h2>
+            <div class="description">Memory game</div>
+            <a href="https://rtcoder.github.io/MemoryGame/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="tools libraries">
+            <img src="img/dominant-color.png" alt="Dominant color">
+            <h2>Dominant color</h2>
+            <div class="description">Get dominant color from images</div>
+            <a href="https://rtcoder.github.io/dominant-color/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="games">
+            <img src="img/shooter-game.png" alt="Shooter">
+            <h2>Shooter</h2>
+            <div class="description">Shooter game</div>
+            <a href="https://rtcoder.github.io/shooter/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="tools">
+            <img src="img/css-converter.png" alt="CSS converter">
+            <h2>CSS converter</h2>
+            <div class="description">Minify and beautify CSS online</div>
+            <a href="https://rtcoder.github.io/CSS-Converter/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="games">
+            <img src="img/tic-tac-toe-game.png" alt="Tic Tac Toe">
+            <h2>Tic Tac Toe</h2>
+            <div class="description">Tic Tac Toe game with AI</div>
+            <a href="https://rtcoder.github.io/Tic-Tac-Toe/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="tools libraries">
+            <img src="img/tooltip.png" alt="Tooltip">
+            <h2>Tooltip</h2>
+            <div class="description">Simple tooltip library</div>
+            <a href="https://rtcoder.github.io/Tooltip/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="games">
+            <img src="img/space-invaders-game.png" alt="Space Invaders">
+            <h2>Space Invaders</h2>
+            <div class="description">Space Invaders game</div>
+            <a href="https://rtcoder.github.io/Space-Invaders/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="tools">
+            <img src="img/csv-view.png" alt="CSV View">
+            <h2>CSV View</h2>
+            <div class="description">Preview CSV files online</div>
+            <a href="https://rtcoder.github.io/CSV-View/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="other">
+            <img src="img/js-os.png" alt="JS OS">
+            <h2>JS OS</h2>
+            <div class="description">Operating system interface in JavaScript</div>
+            <a href="https://rtcoder.github.io/js-os/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="other">
+            <img src="img/meme-gen.png" alt="MemeGen">
+            <h2>MemeGen</h2>
+            <div class="description">This tool allows you to create memes</div>
+            <a href="https://rtcoder.github.io/MemeGen/" target="_blank">
+                <button>View Project</button>
+            </a>
+        </div>
+        <div class="list-item" data-tag="games">
+            <img src="img/jump-game.png" alt="Jump">
+            <h2>Jump</h2>
+            <div class="description">Jump game like Icy Tower</div>
+            <a href="https://rtcoder.github.io/Jump/" target="_blank">
+                <button>View Project</button>
+            </a>
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
-<script src="js/app.js"></script>
+<footer>
+    rtCoder
 
+    <div class="links">
+        <a href="https://github.com/rtcoder" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:dawidjez@gmail.com" title="E-mail">
+            <i class="fa-sharp fa-solid fa-envelope"></i>
+        </a>
+    </div>
+</footer>
+<script src="app.js"></script>
 </body>
 </html>
