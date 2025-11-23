@@ -10,8 +10,8 @@ document.querySelector('.tags').addEventListener('click', e => {
         document.querySelectorAll('.list-item').forEach(el => el.style.removeProperty('display'));
         return;
     }
-    document.querySelectorAll('.list-item').forEach(el => {
-        if (el.getAttribute('data-tag').includes(tagCategory)) {
+    document.querySelectorAll('list-item-card').forEach(el => {
+        if (el.getAttribute('tag').includes(tagCategory)) {
             el.style.removeProperty('display');
         } else {
             el.style.display = 'none';
