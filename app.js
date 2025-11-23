@@ -7,7 +7,7 @@ document.querySelector('.tags').addEventListener('click', e => {
     target.classList.add('active');
     const tagCategory = target.getAttribute('data-tag-category');
     if (tagCategory === 'all') {
-        document.querySelectorAll('.list-item').forEach(el => el.style.removeProperty('display'));
+        document.querySelectorAll('list-item-card').forEach(el => el.style.removeProperty('display'));
         return;
     }
     document.querySelectorAll('list-item-card').forEach(el => {
