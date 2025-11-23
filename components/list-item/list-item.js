@@ -1,36 +1,41 @@
 class ListItemCard extends HTMLElement {
-    static #css = '';
-    static #template = '';
+    static #cssPromise = null;
+    static #htmlPromise = null;
+    static #sheet = null;
+    static #template = null;
+
     static get observedAttributes() {
         return ['tag', 'img', 'title', 'description', 'href'];
     }
 
-     constructor() {
+    constructor() {
         super();
         this.attachShadow({mode: 'open'});
-         this._ready = this._loadResources();
+        this._ready = this._loadResources();
     }
 
     async _loadResources() {
-        if (!ListItemCard.#css || !ListItemCard.#template) {
-            const [css, html] = await Promise.all([
-                ListItemCard.#css
-                    ? Promise.resolve(ListItemCard.#css)
-                    : fetch('/components/list-item/list-item.css').then(r => r.text()),
-                ListItemCard.#template
-                    ? Promise.resolve(ListItemCard.#template)
-                    : fetch('/components/list-item/list-item.html').then(r => r.text())
-            ]);
-
-            ListItemCard.#css = css;
-            ListItemCard.#template = html;
+        if (!ListItemCard.#cssPromise) {
+            ListItemCard.#cssPromise = fetch('/components/list-item/list-item.css')
+                .then(r => r.text())
+                .then(async cssText => {
+                    const sheet = new CSSStyleSheet();
+                    await sheet.replace(cssText);
+                    ListItemCard.#sheet = sheet;
+                });
+        }
+        if (!ListItemCard.#htmlPromise) {
+            ListItemCard.#htmlPromise = fetch('/components/list-item/list-item.html')
+                .then(r => r.text())
+                .then(html => {
+                    ListItemCard.#template = html;
+                });
         }
 
-        // dopiero po załadowaniu
-        this.shadowRoot.innerHTML = `
-            <style>${ListItemCard.#css}</style>
-            ${ListItemCard.#template}
-        `;
+        await Promise.all([ListItemCard.#cssPromise, ListItemCard.#htmlPromise]);
+
+        this.shadowRoot.adoptedStyleSheets = [ListItemCard.#sheet];
+        this.shadowRoot.innerHTML = ListItemCard.#template;
 
         this.$ = {
             img: this.shadowRoot.getElementById('imgElm'),
@@ -41,6 +46,7 @@ class ListItemCard extends HTMLElement {
 
         this._render();
     }
+
     connectedCallback() {
         this._ready.then(() => this._render());
     }
@@ -49,9 +55,10 @@ class ListItemCard extends HTMLElement {
         this._ready.then(() => this._render());
     }
 
-
     _render() {
-        if (!this.$) return;
+        if (!this.$) {
+            return;
+        }
 
         this.$.img.src = this.getAttribute('img') || '';
         this.$.img.alt = this.getAttribute('title') || '';

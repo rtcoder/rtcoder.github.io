@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac62ea83-f281-4a92-991e-b38ae4a66f5c" name="Default Changelist" comment="js os image">
-      <change afterPath="$PROJECT_DIR$/components/list-item/list-item.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/list-item/list-item.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/list-item/list-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    <list default="true" id="ac62ea83-f281-4a92-991e-b38ae4a66f5c" name="Default Changelist" comment="Improve resource loading for `list-item-card` by introducing lazy initialization for CSS and HTML files.">
+      <change beforePath="$PROJECT_DIR$/components/list-item/list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/list-item/list-item.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +178,7 @@
       <workItem from="1685649359653" duration="149000" />
       <workItem from="1686414523969" duration="73000" />
       <workItem from="1696693826064" duration="1566000" />
-      <workItem from="1763909810032" duration="7538000" />
+      <workItem from="1763909810032" duration="8025000" />
     </task>
     <task id="LOCAL-00001" summary="new layut">
       <created>1685014101457</created>
@@ -220,7 +215,23 @@
       <option name="project" value="LOCAL" />
       <updated>1686414566323</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactor project cards to reusable `list-item-card` component. Cleanup unused styles and update `index.html`.">
+      <option name="closed" value="true" />
+      <created>1763917952217</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763917952217</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Improve resource loading for `list-item-card` by introducing lazy initialization for CSS and HTML files.">
+      <option name="closed" value="true" />
+      <created>1763918359478</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763918359478</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -276,7 +287,9 @@
     <MESSAGE value="add project" />
     <MESSAGE value="add project Tanks" />
     <MESSAGE value="js os image" />
-    <option name="LAST_COMMIT_MESSAGE" value="js os image" />
+    <MESSAGE value="Refactor project cards to reusable `list-item-card` component. Cleanup unused styles and update `index.html`." />
+    <MESSAGE value="Improve resource loading for `list-item-card` by introducing lazy initialization for CSS and HTML files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve resource loading for `list-item-card` by introducing lazy initialization for CSS and HTML files." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/mixins.css">
