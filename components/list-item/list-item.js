@@ -16,8 +16,7 @@ class ListItemCard extends HTMLElement {
 
     async _loadResources() {
         if (!ListItemCard.#cssPromise) {
-            ListItemCard.#cssPromise = fetch('/components/list-item/list-item.css')
-                .then(r => r.text())
+            ListItemCard.#cssPromise = this.get('/components/list-item/list-item.css')
                 .then(async cssText => {
                     const sheet = new CSSStyleSheet();
                     await sheet.replace(cssText);
@@ -25,11 +24,8 @@ class ListItemCard extends HTMLElement {
                 });
         }
         if (!ListItemCard.#htmlPromise) {
-            ListItemCard.#htmlPromise = fetch('/components/list-item/list-item.html')
-                .then(r => r.text())
-                .then(html => {
-                    ListItemCard.#template = html;
-                });
+            ListItemCard.#htmlPromise = this.get('/components/list-item/list-item.html')
+                .then(html => ListItemCard.#template = html);
         }
 
         await Promise.all([ListItemCard.#cssPromise, ListItemCard.#htmlPromise]);
@@ -45,6 +41,10 @@ class ListItemCard extends HTMLElement {
         };
 
         this._render();
+    }
+
+    get(url) {
+        return fetch(url).then(r => r.text());
     }
 
     connectedCallback() {
